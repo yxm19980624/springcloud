@@ -1,0 +1,25 @@
+#端口配置
+server:
+  port: 8001
+
+#mybatis-plus配置
+mybatis-plus:
+  type-aliases-package: com.yxm.springcloud.entity
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+
+#spring 配置
+spring:
+  application:
+    name: springcloud-provider-dept
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/db01?useSSL=false&useUnicode=true&characterEncoding=utf-8&serverTimeZone=GMT%2B8
+    username: root
+    password: root
