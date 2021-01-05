@@ -1,7 +1,7 @@
 package com.yxm.springcloud.mapper;
 
-import com.yxm.springcloud.entity.Dept;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.yxm.springcloud.entity.Dept;
 
 /**
  * <p>

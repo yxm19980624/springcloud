@@ -23,3 +23,18 @@ spring:
     url: jdbc:mysql://localhost:3306/db01?useSSL=false&useUnicode=true&characterEncoding=utf-8&serverTimeZone=GMT%2B8
     username: root
     password: root
+
+#eureka配置
+eureka:
+  client:
+    service-url:
+#      defaultZone: http://localhost:7001/eureka/  #单机  将服务提供者服务注册到eureka的路径下
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/  #集群  将服务提供者服务注册到集群中
+  instance:
+    instance-id: springcloud-provider-dept8001   #修改eureka上的默认描述信息
+
+
+#info配置  监控信息页面
+info:
+  app.name: yxm_springcloud
+  company.name: www.yxm.com

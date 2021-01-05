@@ -1,7 +1,9 @@
 package com.yxm.springcloud.service;
 
-import com.yxm.springcloud.entity.Dept;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.yxm.springcloud.entity.Dept;
+
+import java.util.List;
 
 /**
  * <p>
@@ -13,4 +15,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface DeptService extends IService<Dept> {
 
+    List<Dept> findAll();
 }
