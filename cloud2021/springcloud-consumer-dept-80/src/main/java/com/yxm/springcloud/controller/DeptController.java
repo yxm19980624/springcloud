@@ -17,11 +17,14 @@ import java.util.List;
 @RestController
 public class DeptController {
 
-    //消费者不应该有service层
+    //消费者不应该有service层   通过RestTemplate模板，访问远程http服务的方法
     @Autowired
     private RestTemplate restTemplate;
 
-    private static final String REST_URL_PREFIX = "http://localhost:8001";
+//    private static final String REST_URL_PREFIX = "http://localhost:8001";
+
+//    ribbon 通过服务提供者的服务名来访问
+    private static final String REST_URL_PREFIX = "http://SPRINGCLOUD-PROVIDER-DEPT";
 
     @GetMapping("/findAll")
     private List<Dept> findAll(){
