@@ -4,7 +4,6 @@ import com.netflix.client.config.IClientConfig;
 import com.netflix.loadbalancer.AbstractLoadBalancerRule;
 import com.netflix.loadbalancer.ILoadBalancer;
 import com.netflix.loadbalancer.Server;
-import org.springframework.context.annotation.Configuration;
 
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
@@ -15,7 +14,6 @@ import java.util.concurrent.ThreadLocalRandom;
  * @Emial: yxm1136656235@163.com
  * @Description:  自定义负载均衡策略
  */
-@Configuration
 public class YxmRandomRule extends AbstractLoadBalancerRule {
 
     private int total = 0;          //被调用的次数 方便计算被调用了多少次
@@ -50,7 +48,7 @@ public class YxmRandomRule extends AbstractLoadBalancerRule {
              * 自定义算法  每个服务调取5次后，重新下一个服务5次，轮询  有bug 算法问题
              */
             //=========================现在的=========================
-           /* if (total < 5){
+            /*if (total < 5){
                  server = upList.get(currentIndex);
                  currentIndex++;
             }else{
