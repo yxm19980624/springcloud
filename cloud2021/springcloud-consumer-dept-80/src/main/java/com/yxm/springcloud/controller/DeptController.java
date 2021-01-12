@@ -3,6 +3,7 @@ package com.yxm.springcloud.controller;
 import com.yxm.springcloud.entity.Dept;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
@@ -15,6 +16,7 @@ import java.util.List;
  * @Description:
  */
 @RestController
+@RequestMapping("/dept")
 public class DeptController {
 
     //消费者不应该有service层   通过RestTemplate模板，访问远程http服务的方法

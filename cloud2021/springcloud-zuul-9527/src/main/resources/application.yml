@@ -1,0 +1,24 @@
+server:
+  port: 9527
+spring:
+  application:
+    name: springcloud-zuul
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/  #集群  将服务提供者服务注册到集群中
+  instance:
+    instance-id: zuul9527.com
+    prefer-ip-address: true   #隐藏IP
+
+info:
+  app.name: yxm-springcloud
+  company.name: www.yxm.com
+
+zuul:
+  routes:
+    mydept.serviceId: springcloud-provider-dept     #将服务提供者的服务路径改成下面的路径（目的隐藏真实的微服务名）
+    mydept.path: /mydept/**
+  ignored-services: springcloud-provider-dept     #将原有的通过微服务名访问的方式禁用，只能通过路由网关的方式访问
+#  ignored-services: "*"     #隐藏全部的微服务名
+#  prefix: /yxm  #方便项目发布时，配置公共的前缀
